@@ -35,12 +35,6 @@ $(call inherit-product, vendor/omni/config/gsm.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Otherwise, If you have 32-bit device, add the below line instead of above line
-##$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk
-
-# Another common config inclusion
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/embedded.mk)
-
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
@@ -79,7 +73,6 @@ PRODUCT_COPY_FILES_OVERRIDES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-#$(LOCAL_PATH)/recovery/root/etc/recovery.fstab:root/etc/recovery.fstab \
 $(LOCAL_PATH)/recovery/root/factory_init.project.rc:root/factory_init.project.rc \
 $(LOCAL_PATH)/recovery/root/factory_init.rc:root/factory_init.rc \
 $(LOCAL_PATH)/recovery/root/init.recovery.mt6582.rc:root/init.recovery.mt6582.rc \
@@ -88,7 +81,7 @@ $(LOCAL_PATH)/recovery/root/meta_init.project.rc:root/meta_init.project.rc \
 $(LOCAL_PATH)/recovery/root/meta_init.rc:root/meta_init.rc \
 $(LOCAL_PATH)/recovery/root/ueventd.mt6582.rc:root/ueventd.mt6582.rc \
 $(LOCAL_PATH)/recovery/root/fstab.mt6582:root/fstab.mt6582
-#$(LOCAL_PATH)/recovery/root/sbin/permissive.sh:root/sbin/permissive.sh
+
 
 #SELinux
 PRODUCT_COPY_FILES += \
@@ -96,5 +89,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/seapp_contexts:root/seapp_contexts \
     $(LOCAL_PATH)/recovery/root/property_contexts:root/property_contexts
 
-#twrp
-#PRODUCT_COPY_FILES += $(LOCAL_PATH)/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
